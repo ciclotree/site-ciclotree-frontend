@@ -1,0 +1,308 @@
+:root {
+    --mainOpacity: rgba(0, 0, 0, 0.55);
+  }
+  
+  /* --- Header principal --- */
+  .header {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("./Images/image-header.jpg");
+    opacity: var(--mainOpacity);
+    height: 25em !important;
+  }
+  
+  .dark-overlay {
+    background-color: rgba(85, 61, 61, 0.35);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+  
+  .job-color {
+    background-color: #ffffff;
+    font-family: "Hagrid Text", sans-serif;
+    text-decoration: none;
+    color: #203850;
+  }
+  
+  .background-heros {
+    background-color: #ffffff;
+  }
+  
+  .page-background {
+    background-color: #f5f5f5;/* cinza claro */
+  }
+  
+  .custom-job-detail {
+    margin-left: 0px;
+    padding-left: 0px;
+  }
+  .main-color {
+    background-color: #203850;
+  }
+  
+  .navbar-color {
+    background-color: #ffffff;
+  }
+  
+  .page-link {
+    color: #203850;              /* cor normal do texto */
+    font-weight: 500;
+  }
+
+  .card {
+    border-left: 6px solid #008037;
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    margin-bottom: 50px;
+    display: flex;
+  }
+
+  .custom-final-home {
+    background-color: #f2f2f2fa;
+    font-family: "Hagrid Text", sans-serif;
+    text-decoration: none;
+    color: #203850;
+    border-radius: 16px;
+  }
+  /* --- Ajuste do layout de colunas --- */
+  .col-image-left {
+    background-image: url("./Images/heros-1.jpeg");
+    height: 25em !important;
+  }
+  
+  .col-image-right {
+    background-image: url("./Images/heros-2.jpeg");
+    height: 25em !important;
+  }
+  .lost-image {
+    /*height: 25em; */
+    background-image: url("./Images/procurar-mais.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    height: 300px;
+    border-radius: 16px;
+    background-color: transparent !important;
+  }
+  
+  /* Oculta em telas pequenas (até 991px, padrão Bootstrap lg breakpoint) */
+  @media (max-width: 991px) {
+    .lost-image {
+      display: none;
+    }
+  }
+  
+  /* --- Centralização e estilo do menu --- */
+  .navbar {
+    justify-content: center;
+    padding: 1rem 2rem;
+    font-family: "Hagrid Text", sans-serif;
+  }
+  
+  .navbar-nav {
+    margin: 0 auto;
+    gap: 2rem; /* espaço entre os itens */
+  }
+  
+  .nav-link.nav-text-ciclo-tree {
+    color: #203850;
+    font-size: 1.15rem; /* letras maiores */
+    font-weight: 500;
+    text-decoration: none;
+    transition: color 0.2s ease, font-weight 0.2s ease;
+  }
+  
+  .nav-link.nav-text-ciclo-tree:hover {
+    color: #008037;
+    font-weight: 600;
+  }
+  
+  .nav-link.fw-bold {
+    color: #008037 !important;
+    font-weight: 700;
+  }
+  
+  /* --- Logo maior e proporcional --- */
+  .navbar-brand img {
+    height: 60px;
+    width: auto;
+    max-width: 260px;
+    object-fit: contain;
+  }
+  
+  .navbar-brand {
+    display: flex;
+    align-items: center;
+    margin-right: 2rem;
+  }
+  
+  /* --- Botão de orçamento --- */
+  .btn-orcamento {
+    background-color: #008037;
+    color: white;
+    font-family: "Hagrid Text", sans-serif;
+    border: none;
+    border-radius: 25px;
+    padding: 0.6rem 1.4rem;
+    font-weight: 600;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+  }
+  
+  .btn-orcamento:hover {
+    background-color: #006c2e;
+    transform: scale(1.05);
+  }
+  
+  /* --- Hover do botão com .main-color (RESTAURADO) --- */
+  .btn.main-color.text-white.btn-outline:hover {
+    background-color: gray; /* Cor de fundo cinza no hover */
+    color: white; /* Mantém o texto branco */
+    border-color: gray; /* Borda cinza no hover */
+  }
+  
+  /* --- Responsividade --- */
+  @media (max-width: 992px) {
+    .navbar-nav {
+      gap: 1rem;
+    }
+  
+    .navbar-brand img {
+      height: 45px;
+    }
+  
+    .nav-link.nav-text-ciclo-tree {
+      font-size: 1rem;
+    }
+  
+    .btn-orcamento {
+      margin-top: 1rem;
+      width: 100%;
+    }
+  }
+  
+  /* --- Outros estilos existentes --- */
+  .homepage-carousel-title {
+    display: flex !important;
+    justify-content: left !important;
+    align-items: center !important;
+  }
+
+  .homepage-carousel-button {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+  }
+  
+  
+  .book-div {
+    width: 480px;
+    height: 384px;
+  }
+  
+  .custom-center-vertical {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .inactiveLink {
+    pointer-events: none;
+    cursor: default;
+  }
+  
+  .shadow-on-hover:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* --- Botão do WhatsApp --- */
+#whatsapp-button {
+    display: flex;
+    position: fixed;
+    background: #25d366;
+    bottom: 25px;
+    border-radius: 50%;
+    width: 64px;
+    height: 64px;
+    box-shadow: 2px 2px 12px rgba(22, 124, 60, .2);
+    transition: .4s;
+    align-items: center;
+    justify-content: center
+}
+
+#whatsapp-button>.rwb-tooltip {
+    position: absolute;
+    bottom: 100%;
+    margin-bottom: 20px;
+    border-radius: 4px;
+    padding: 15px;
+    color: #2d2d2d;
+    font-size: 16px;
+    white-space: nowrap;
+    box-shadow: 2px 2px 12px rgba(0, 0, 0, .2);
+    opacity: 0;
+    transition: .4s;
+    pointer-events: none
+}
+
+#whatsapp-button>.rwb-tooltip:after {
+    display: block;
+    content: "";
+    position: absolute;
+    top: 85%;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 6px 7px 0 7px;
+    border-color: #fff transparent transparent transparent;
+    transition: .4s
+}
+
+#whatsapp-button.left {
+    left: 25px
+}
+
+#whatsapp-button.left>.rwb-tooltip {
+    left: 0;
+    transform: translateX(-10%)
+}
+
+#whatsapp-button.left>.rwb-tooltip:after {
+    left: 23px
+}
+
+#whatsapp-button:not(.left) {
+    right: 25px
+}
+
+#whatsapp-button:not(.left)>.rwb-tooltip {
+    right: 0;
+    transform: translateX(10%)
+}
+
+#whatsapp-button:not(.left)>.rwb-tooltip:after {
+    right: 23px
+}
+
+#whatsapp-button>img {
+    display: block;
+    width: 34px;
+    height: 34px
+}
+
+#whatsapp-button:hover {
+    background: #21bd5c;
+    box-shadow: 3px 3px 12px rgba(14, 81, 39, .4)
+}
+
+#whatsapp-button:hover>.rwb-tooltip {
+    opacity: 1;
+    transform: translateX(0)
+}
+
+#whatsapp-button:hover>.rwb-tooltip:after {
+    top: 100%;
+    transition-delay: .4s
+}
+  

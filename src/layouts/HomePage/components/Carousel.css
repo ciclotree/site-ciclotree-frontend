@@ -1,0 +1,20 @@
+.img-job {
+    border: 1px solid #008037;
+}
+
+.div-img-mobile {
+    padding-top: 60px;
+
+}
+.homepage-carousel-title {
+  display: flex !important;
+  justify-content: left !important;
+  align-items: center !important;
+}
+
+/* mobile: centralizado */
+@media (max-width: 768px) {
+  .homepage-carousel-title  {
+    justify-content: center !important;
+  }
+}

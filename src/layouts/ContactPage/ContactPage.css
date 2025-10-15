@@ -1,0 +1,65 @@
+.contact-container {
+    border-left: 6px solid #008037;
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    margin: 0 auto;
+    display: flex;
+}
+
+/* ======================
+   Layout geral (desktop)
+====================== */
+.contact-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+  }
+  
+  .contact-container .card-body {
+    text-align: left; /* 🔹 garante alinhamento à esquerda */
+  }
+  
+  /* Logo */
+  .about-us-images {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .about-us-images img {
+    width: 80%;
+    max-width: 300px;
+    height: auto;
+    transition: all 0.3s ease;
+  }
+  
+  /* ======================
+     Responsividade (mobile)
+  ====================== */
+  @media (max-width: 768px) {
+    .contact-container {
+      flex-direction: column-reverse;
+      align-items: flex-start; /* 🔹 mantem texto à esquerda */
+      text-align: left; /* 🔹 força alinhamento à esquerda */
+    }
+  
+    .card-body {
+      text-align: left;
+      width: 100%;
+    }
+  
+    .about-us-images {
+      width: 100%;
+      justify-content: center; /* imagem continua centralizada */
+      margin-bottom: 1.5rem;
+    }
+  
+    .about-us-images img {
+      width: 65%;
+      max-width: 240px;
+    }
+  }
+  

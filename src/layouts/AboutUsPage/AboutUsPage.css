@@ -1,0 +1,84 @@
+.about-us-hero {
+    padding: 50px 20px; /* Reduz padding lateral no mobile */
+    text-align: center;
+}
+
+.about-us-container {
+    border-left: 6px solid #008037;
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    max-width: 900px; /* Limita a largura no desktop */
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.about-us-content {
+    flex: 1;
+    margin-right: 20px;
+    max-width: 450px;
+    text-align: left;
+}
+
+.about-us-content h2 {
+    font-size: 32px;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.about-us-content p {
+    font-size: 16px;
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+.about-us-images {
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px; /* Espaço entre as imagens */
+}
+
+.about-us-images img {
+    width: 300px;
+    height: auto;
+}
+
+/* Estilos para Mobile */
+@media (max-width: 768px) {
+    .about-us-container {
+        flex-direction: column; /* Empilha o conteúdo e imagens no mobile */
+        padding: 20px; /* Ajusta padding no mobile */
+    }
+
+    .about-us-content {
+        margin-right: 0;
+        max-width: 100%; /* Conteúdo ocupa toda a largura no mobile */
+        text-align: center; /* Centraliza o texto no mobile */
+    }
+
+    .about-us-content h2 {
+        font-size: 28px; /* Título menor no mobile */
+    }
+
+    .about-us-content p {
+        font-size: 14px; /* Texto menor no mobile */
+    }
+
+    .about-us-images {
+        flex-direction: column; /* Imagens empilhadas no mobile */
+        align-items: center;
+    }
+
+    .about-us-images img {
+        width: 100%; /* Imagens ocupam toda a largura no mobile */
+        max-width: 300px; /* Limita o tamanho das imagens no mobile */
+        margin-bottom: 15px;
+    }
+}

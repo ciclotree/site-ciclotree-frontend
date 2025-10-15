@@ -1,0 +1,114 @@
+.mission-hero {
+    padding: 50px 20px; /* Reduz padding lateral no mobile */
+    text-align: left;
+}
+
+.mission-container {
+    border-left: 6px solid #008037;
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    max-width: 900px; /* Limita a largura no desktop */
+    margin: 0 auto;
+    display: flex;
+    align-items: left;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.mission-container .card-body p {
+    width: 100%;
+    padding: 0;
+    text-align: justify;
+}
+
+.mission-content {
+    flex: 1;
+    margin-right: 20px;
+    max-width: 450px;
+    text-align: left;
+}
+
+.mission-content h2 {
+    font-size: 32px;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.mission-content p {
+    font-size: 16px;
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+.mission-images {
+    display: flex;
+    align-items: center; 
+    flex: 1;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px; /* Espaço entre as imagens */
+}
+
+.mission-images img {
+    max-width: 100%;
+    height: auto;
+    max-height: 60%;
+}
+.ul-modern {
+    list-style: none;
+    padding: 0;
+    margin: 1rem 0;
+  }
+  
+  .ul-modern li {
+    position: relative;
+    padding-left: 1.8rem;
+    margin-bottom: 0.8rem;
+    font-size: 1.05rem;
+    color: #203850; /* cor principal */
+    font-family: "Hagrid Text", sans-serif;
+  }
+  
+  .ul-modern li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: #4CAF50; /* cor verde da marca */
+    font-size: 1.4rem;
+    line-height: 1;
+    top: 0;
+  }
+  
+/* Estilos para Mobile */
+@media (max-width: 768px) {
+    .mission-container {
+        flex-direction: column; /* Empilha o conteúdo e imagens no mobile */
+        padding: 20px; /* Ajusta padding no mobile */
+    }
+
+    .mission-content {
+        margin-right: 0;
+        max-width: 100%; /* Conteúdo ocupa toda a largura no mobile */
+        text-align: left; /* Centraliza o texto no mobile */
+    }
+
+    .mission-content h2 {
+        font-size: 28px; /* Título menor no mobile */
+    }
+
+    .mission-content p {
+        font-size: 14px; /* Texto menor no mobile */
+    }
+
+    .mission-images {
+        flex-direction: column; /* Imagens empilhadas no mobile */
+        align-items: center;
+    }
+
+    .mission-images img {
+        width: 100%; /* Imagens ocupam toda a largura no mobile */
+        max-width: 100%; /* Limita o tamanho das imagens no mobile */
+        margin-bottom: 15px;
+    }
+}
