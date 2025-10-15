@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import JobModel from "../../models/JobModel";
 import { SpinnerLoading } from "../utils/SpinnerLoading";
-import defaultJobImg from "../../Images/new-book-1.png";
 import { StarsReview } from "../utils/StarsReview";
 import { EstimateAndReviewBox } from "./EstimateAndReviewBox";
 import ReviewModel from "../../models/ReviewModel";
@@ -94,10 +93,7 @@ export const JobDetailsPage = () => {
       <div className="container d-none d-lg-block">
         <div className="row mt-5">
           <div className="col-md-3">
-            {job?.img
-              ? <img className="img-job" src={job.img} width="226" height="349" alt="Serviço" />
-              : <img className="img-job" src={defaultJobImg} width="226" height="349" alt="Serviço" />
-            }
+            <img className="img-job" src={job?.img} width="226" height="349" alt="Serviço" />
           </div>
 
           <div className="col-md-4 container custom-job-detail">
@@ -125,10 +121,7 @@ export const JobDetailsPage = () => {
       {/* Mobile */}
       <div className="container d-lg-none">
         <div className="d-flex justify-content-center align-items-center div-img-mobile">
-          {job?.img
-            ? <img className="img-job" src={job.img} width="226" height="349" alt="Serviço" />
-            : <img className="img-job" src={defaultJobImg} width="226" height="349" alt="Serviço" />
-          }
+          <img className="img-job" src={job?.img} width="226" height="349" alt="Serviço" />
         </div>
 
         <div className="mt-4">

@@ -7,35 +7,19 @@ export const SearchJob: React.FC<{ job: JobModel }> = (props) => {
             <div className="row g-0">
                 <div className="col-md-2">
                     <div className="d-none d-lg-block">
-                        {props.job.img ?
                             <img className="img-job" src={props.job.img}
                                 width="123"
                                 height="196"
                                 alt="Serviço"
                             />
-                            :
-                            <img className="img-job" src={require("../../../Images/new-book-1.png")}
-                                width="123"
-                                height="196"
-                                alt="Serviço"
-                            />
-                        }
                     </div>
                     <div className="d-lg-none d-flex justify-content-center
                     align-items-center">
-                        {props.job.img ?
-                            <img className="img-job" src={props.job.img}
+                        <img className="img-job" src={props.job.img}
                                 width="123"
                                 height="196"
                                 alt="Serviço"
                             />
-                            :
-                            <img className="img-job" src={require("../../../Images/new-book-1.png")}
-                                width="123"
-                                height="196"
-                                alt="Serviço"
-                            />
-                        }
                     </div>
                 </div>
                 <div className="col-md-6">
