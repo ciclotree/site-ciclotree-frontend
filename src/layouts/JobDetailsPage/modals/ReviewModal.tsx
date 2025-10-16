@@ -52,7 +52,7 @@ export const ReviewModal: React.FC<ReviewModalProps> = ({
     }
 
     try {
-      const response = await fetch("http://localhost:8080/api/reviews/send-code", {
+      const response = await fetch("http://72.61.131.161:8080/api/reviews/send-code", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -78,7 +78,7 @@ export const ReviewModal: React.FC<ReviewModalProps> = ({
     e.preventDefault();
 
     try {
-      const response = await fetch("http://localhost:8080/api/reviews/verify-code", {
+      const response = await fetch("http://72.61.131.161:8080/api/reviews/verify-code", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

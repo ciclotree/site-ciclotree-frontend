@@ -17,7 +17,7 @@ export const AllReviewsPage = () => {
   useEffect(() => {
     const fetchJobTitle = async () => {
       try {
-        const response = await fetch(`http://localhost:8080/api/jobs/${jobId}`);
+        const response = await fetch(`http://72.61.131.161:8080/api/jobs/${jobId}`);
         if (!response.ok) throw new Error("Erro ao buscar o título do serviço.");
         const data = await response.json();
         setJobTitle(data.title);
@@ -34,7 +34,7 @@ export const AllReviewsPage = () => {
 
   useEffect(() => {
     const fetchJobReviews = async () => {
-      const reviewUrl: string = `http://localhost:8080/api/reviews/search/findByJobId?jobId=${jobId}`;
+      const reviewUrl: string = `http://72.61.131.161:8080/api/reviews/search/findByJobId?jobId=${jobId}`;
 
       try {
         const response = await fetch(reviewUrl);
