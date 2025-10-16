@@ -22,7 +22,7 @@ export const SearchJobsPage = () => {
         jobsPerPage * currentPage : totalAmountOfJobs;
     useEffect(() => {
         const fetchJobs = async () => {
-            const baseUrl: string = "https://ciclotree.com.br:8080/api/jobs";
+            const baseUrl: string = "https://ciclotree.com.br/api/jobs";
             let url: string = "";
 
             if(searchUrl === "") {
