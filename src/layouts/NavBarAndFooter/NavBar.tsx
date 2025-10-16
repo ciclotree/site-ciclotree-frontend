@@ -51,106 +51,53 @@ export const NavBar = () => {
 
   return (
     <>
-      <nav className="navbar navbar-expand-lg navbar-light navbar-color py-3">
-        <div className="container-fluid d-flex justify-content-between align-items-center">
-          {/* --- Logo --- */}
-          <span
-            className="navbar-brand d-flex align-items-center"
-            style={{ cursor: "pointer" }}
-            onClick={handleLogoClick}
-          >
-            <img
-              src={imageLogo}
-              alt="CicloTree"
-              className="img-fluid"
-              style={{ height: "60px", objectFit: "contain" }}
-            />
-          </span>
+<nav className="navbar navbar-expand-lg navbar-light navbar-color py-3">
+  <div className="container-fluid">
+    <div className="d-flex justify-content-between align-items-center w-100">
+      {/* --- Logo --- */}
+      <span
+        className="navbar-brand d-flex align-items-center"
+        style={{ cursor: "pointer" }}
+        onClick={handleLogoClick}
+      >
+        <img
+          src={imageLogo}
+          alt="CicloTree"
+          className="img-fluid"
+          style={{ height: "60px", objectFit: "contain" }}
+        />
+      </span>
 
-          {/* --- Botão menu mobile --- */}
-          <button
-            className="navbar-toggler"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarNavDropdown"
-            aria-controls="navbarNavDropdown"
-            aria-expanded="false"
-            aria-label="Toggle Navigation"
-          >
-            <span className="navbar-toggler-icon"></span>
-          </button>
+      {/* --- Botão menu mobile --- */}
+      <button
+        className="navbar-toggler ms-auto"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarNavDropdown"
+        aria-controls="navbarNavDropdown"
+        aria-expanded="false"
+        aria-label="Toggle Navigation"
+      >
+        <span className="navbar-toggler-icon"></span>
+      </button>
+    </div>
 
-          {/* --- Links --- */}
-          <div
-            className="collapse navbar-collapse justify-content-center align-items-center"
-            id="navbarNavDropdown"
-            ref={collapseRef}
-          >
-            <ul className="navbar-nav d-flex align-items-center text-center">
-              <li className="nav-item shadow-on-hover">
-                <NavLink
-                  className={({ isActive }) =>
-                    `nav-link nav-text-ciclo-tree ${isActive ? "fw-bold" : ""}`
-                  }
-                  to="/home"
-                  onClick={handleNavLinkClick}
-                >
-                  Home
-                </NavLink>
-              </li>
-              <li className="nav-item shadow-on-hover">
-                <NavLink
-                  className={({ isActive }) =>
-                    `nav-link nav-text-ciclo-tree ${isActive ? "fw-bold" : ""}`
-                  }
-                  to="/search"
-                  onClick={handleNavLinkClick}
-                >
-                  Serviços
-                </NavLink>
-              </li>
-              <li className="nav-item shadow-on-hover">
-                <NavLink
-                  className={({ isActive }) =>
-                    `nav-link nav-text-ciclo-tree ${isActive ? "fw-bold" : ""}`
-                  }
-                  to="/about"
-                  onClick={handleNavLinkClick}
-                >
-                  Sobre Nós
-                </NavLink>
-              </li>
-              <li className="nav-item shadow-on-hover">
-                <NavLink
-                  className={({ isActive }) =>
-                    `nav-link nav-text-ciclo-tree ${isActive ? "fw-bold" : ""}`
-                  }
-                  to="/mission"
-                  onClick={handleNavLinkClick}
-                >
-                  Missão
-                </NavLink>
-              </li>
-              <li className="nav-item shadow-on-hover">
-                <NavLink
-                  className={({ isActive }) =>
-                    `nav-link nav-text-ciclo-tree ${isActive ? "fw-bold" : ""}`
-                  }
-                  to="/contact"
-                  onClick={handleNavLinkClick}
-                >
-                  Contato
-                </NavLink>
-              </li>
-            </ul>
-          </div>
+    {/* --- Links --- */}
+    <div
+      className="collapse navbar-collapse justify-content-center align-items-center"
+      id="navbarNavDropdown"
+      ref={collapseRef}
+    >
+      {/* seus links */}
+    </div>
 
-          {/* --- Botão global de orçamento --- */}
-          <button className="btn btn-orcamento" onClick={handleOpenModal}>
-            Orçamento
-          </button>
-        </div>
-      </nav>
+    {/* --- Botão global de orçamento --- */}
+    <button className="btn btn-orcamento d-none d-lg-block ms-3" onClick={handleOpenModal}>
+      Orçamento
+    </button>
+  </div>
+</nav>
+
 
       {/* --- Modal global --- */}
       <EstimateModal
