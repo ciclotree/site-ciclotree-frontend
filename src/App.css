@@ -138,6 +138,12 @@
     align-items: center;
     margin-right: 2rem;
   }
+
+  @media (max-width: 991.98px) {
+  .navbar-brand {
+    margin-right: 0.5rem; /* ou até 0 se quiser encostar totalmente */
+  }
+}
   
   /* --- Botão de orçamento --- */
   .btn-orcamento {
