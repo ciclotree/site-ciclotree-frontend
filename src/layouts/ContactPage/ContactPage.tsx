@@ -69,7 +69,7 @@ export const ContactPage = () => {
         setLoading(true);
 
         try {
-            const response = await fetch('http://72.61.131.161:8080/api/email/send', {
+            const response = await fetch('http://ciclotree.com.br:8080/api/email/send', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

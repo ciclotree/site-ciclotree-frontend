@@ -32,7 +32,7 @@ export const EstimateAndReviewBox: React.FC<Props> = ({
     };
 
     try {
-      const response = await fetch("http://72.61.131.161:8080/api/email/sendEstimate", {
+      const response = await fetch("http://ciclotree.com.br:8080/api/email/sendEstimate", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(payload),
@@ -59,7 +59,7 @@ export const EstimateAndReviewBox: React.FC<Props> = ({
     };
 
     try {
-      const response = await fetch("http://72.61.131.161:8080/api/reviews", {
+      const response = await fetch("http://ciclotree.com.br:8080/api/reviews", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(payload),
