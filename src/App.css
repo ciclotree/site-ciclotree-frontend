@@ -159,7 +159,10 @@
   
   /* --- Responsividade --- */
   @media (max-width: 992px) {
-
+    .lost-image {
+      display: none;
+    }
+	
     .navbar-nav {
       gap: 1rem;
     }
