@@ -6,44 +6,42 @@
     vertical-align: middle;
 }
 
-/* Garante que logo e botão do menu fiquem na mesma linha */
+/* --- LAYOUT GERAL --- */
 .navbar .container-fluid {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  flex-wrap: wrap; /* permite que o botão de orçamento fique abaixo */
+  flex-wrap: wrap; /* permite quebra de linha para o botão orçamento */
 }
 
-/* Logo e botão de menu sempre lado a lado */
+/* --- LOGO --- */
 .navbar-brand {
   display: flex;
   align-items: center;
+  justify-content: flex-start;
+  flex-shrink: 0;
 }
 
+/* --- BOTÃO DO MENU --- */
 .navbar-toggler {
-  margin-left: auto; /* empurra para a direita */
+  margin-left: auto;
+  flex-shrink: 0;
 }
 
-/* Mantém o botão de orçamento na linha de baixo e centralizado */
-.btn-orcamento {
-  width: 100%;
-  text-align: center;
-  margin-top: 0.8rem;
-}
-
-/* Evita estourar layout em telas menores */
-@media (max-width: 768px) {
+/* --- REGRAS ESPECÍFICAS PARA MOBILE --- */
+@media (max-width: 991.98px) {
   .navbar .container-fluid {
+    flex-wrap: wrap; /* permite a linha de baixo */
     flex-direction: row;
   }
 
-  .navbar-toggler {
-    margin-left: auto;
+  /* logo esquerda, menu direita */
+  .navbar-brand {
+    justify-content: flex-start;
   }
 
-  .btn-orcamento {
-    width: 100%;
-    justify-content: center;
+  .navbar-toggler {
+    margin-left: auto; /* joga o menu pra direita */
   }
 }
 
