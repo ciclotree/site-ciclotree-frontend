@@ -41,7 +41,7 @@ export const EstimateModal: React.FC<EstimateModalProps> = ({
     if (!selectedService) {
       const fetchJobs = async () => {
         try {
-          const baseUrl = "http://ciclotree.com.br:8080/api/jobs";
+          const baseUrl = "https://ciclotree.com.br:8080/api/jobs";
           const url = `${baseUrl}?page=0&size=50`;
           const response = await fetch(url);
 

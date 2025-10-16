@@ -12,7 +12,7 @@ export const Carousel = () => {
 
     useEffect(() => {
         const fetchJobs = async () => {
-            const baseUrl: string = "http://ciclotree.com.br:8080/api/jobs";
+            const baseUrl: string = "https://ciclotree.com.br:8080/api/jobs";
             const url: string = `${baseUrl}?page=0&size=6`;
             const response = await fetch(url);
 

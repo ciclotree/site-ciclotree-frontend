@@ -22,7 +22,7 @@ export const JobDetailsPage = () => {
 
   const fetchJob = async () => {
     try {
-      const response = await fetch(`http://ciclotree.com.br:8080/api/jobs/${jobId}`);
+      const response = await fetch(`https://ciclotree.com.br:8080/api/jobs/${jobId}`);
       if (!response.ok) throw new Error("Algo deu errado.");
       const data = await response.json();
 
@@ -45,7 +45,7 @@ export const JobDetailsPage = () => {
 
   const fetchJobReviews = async () => {
     try {
-      const response = await fetch(`http://ciclotree.com.br:8080/api/reviews/search/findByJobId?jobId=${jobId}`);
+      const response = await fetch(`https://ciclotree.com.br:8080/api/reviews/search/findByJobId?jobId=${jobId}`);
       if (!response.ok) throw new Error("Erro ao buscar avaliações.");
 
       const data = await response.json();
