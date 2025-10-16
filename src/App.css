@@ -166,7 +166,7 @@
   
     .navbar-brand img {
       height: 30px;
-      max-width: 100px;
+      max-width: 200px;
     }
     .navbar-brand {
       margin-right: 0.5rem; /* ou até 0 se quiser encostar totalmente */
