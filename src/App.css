@@ -87,13 +87,7 @@
     border-radius: 16px;
     background-color: transparent !important;
   }
-  
-  /* Oculta em telas pequenas (até 991px, padrão Bootstrap lg breakpoint) */
-  @media (max-width: 991px) {
-    .lost-image {
-      display: none;
-    }
-  }
+
   
   /* --- Centralização e estilo do menu --- */
   .navbar {
@@ -139,12 +133,6 @@
     margin-right: 2rem;
   }
 
-  @media (max-width: 991.98px) {
-  .navbar-brand {
-    margin-right: 0.5rem; /* ou até 0 se quiser encostar totalmente */
-  }
-}
-  
   /* --- Botão de orçamento --- */
   .btn-orcamento {
     background-color: #008037;
@@ -171,14 +159,17 @@
   
   /* --- Responsividade --- */
   @media (max-width: 992px) {
+
     .navbar-nav {
       gap: 1rem;
     }
   
     .navbar-brand img {
-      height: 45px;
+      height: 30px;
     }
-  
+    .navbar-brand {
+      margin-right: 0.5rem; /* ou até 0 se quiser encostar totalmente */
+    }  
     .nav-link.nav-text-ciclo-tree {
       font-size: 1rem;
     }
