@@ -38,6 +38,7 @@ export const EstimateModal: React.FC<EstimateModalProps> = ({
   const [httpError, setHttpError] = useState<string | null>(null);
 
   useEffect(() => {
+    
     if (!selectedService) {
       const fetchJobs = async () => {
         try {
@@ -76,6 +77,12 @@ export const EstimateModal: React.FC<EstimateModalProps> = ({
       setIsLoading(false);
     }
   }, [selectedService]);
+
+  useEffect(() => {
+    if (!show) {
+      resetForm();
+    }
+  }, [show]);
 
   const resetForm = () => setFormData(initialFormState);
 

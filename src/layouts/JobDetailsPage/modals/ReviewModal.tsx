@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Modal, Button, Form } from "react-bootstrap";
 import { toast } from "react-toastify";
 import { ReviewFormData } from "../types/ReviewModal.types";
@@ -9,7 +9,6 @@ interface ReviewModalProps {
   jobId: number;
   onSubmit: (form: ReviewFormData) => Promise<boolean>; // ✅ corrigido aqui
 }
-
 export const ReviewModal: React.FC<ReviewModalProps> = ({
   show,
   onClose,
@@ -35,7 +34,12 @@ export const ReviewModal: React.FC<ReviewModalProps> = ({
     setIsVerified(false);
   };
   
-
+  useEffect(() => {
+    if (!show) {
+      resetForm();
+    }
+  }, [show]);
+  
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {

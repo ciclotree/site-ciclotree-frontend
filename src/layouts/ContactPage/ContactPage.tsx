@@ -132,7 +132,7 @@ export const ContactPage = () => {
                                 </div>
                             </div>
                         </div>
-                        <div className="about-us-images">
+                        <div className="contact-images">
                             <img src={imageLogo} alt="CicloTree" />
                         </div>
                     </div>
