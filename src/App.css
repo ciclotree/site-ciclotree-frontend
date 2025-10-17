@@ -159,12 +159,19 @@
   
   /* --- Responsividade --- */
   @media (max-width: 992px) {
+    /* --- Centralização e estilo do menu --- */
     .navbar {
-      position: fixed;
+      justify-content: center;
+      padding: 1rem 2rem;
+      font-family: "Hagrid Text", sans-serif;
+      position: sticky;         /* Fica fixo no topo, mas respeita o fluxo da página */
       top: 0;
       width: 100%;
       z-index: 1000;
+      background-color: #ffffff; /* Garante que o fundo cubra conteúdo ao rolar */
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08); /* leve sombra para destaque */
     }
+
     .lost-image {
       display: none;
     }
