@@ -65,7 +65,6 @@
     position: relative;
     padding-left: 1.8rem;
     margin-bottom: 0.8rem;
-    font-size: 1.05rem;
     color: #203850; /* cor principal */
     font-family: "Hagrid Text", sans-serif;
   }
@@ -75,7 +74,6 @@
     position: absolute;
     left: 0;
     color: #4CAF50; /* cor verde da marca */
-    font-size: 1.4rem;
     line-height: 1;
     top: 0;
   }
