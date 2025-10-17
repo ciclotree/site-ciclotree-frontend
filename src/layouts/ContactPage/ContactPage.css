@@ -39,28 +39,37 @@
   /* ======================
      Responsividade (mobile)
   ====================== */
-  @media (max-width: 768px) {
-    .contact-container {
-      flex-direction: column-reverse;
-      align-items: flex-start; /* 🔹 mantem texto à esquerda */
-      text-align: left; /* 🔹 força alinhamento à esquerda */
-    }
-  
-    .card-body {
-      text-align: left;
-      width: 100%;
-    }
-  
-    .contact-images {
-      width: 100%;
-      justify-content: center; /* imagem continua centralizada */
-      margin-bottom: 20px;
-      margin-top: 20px;
-    }
-  
-    .contact-images img {
-      width: 65%;
-      max-width: 240px;
-    }
+@media (max-width: 768px) {
+  .contact-container {
+    flex-direction: column-reverse;
+    align-items: center;
+    text-align: left;
+    padding-top: 5px;   /* 🔹 reduz espaço acima */
+    padding-bottom: 5px; /* 🔹 reduz espaço abaixo */
   }
+
+  .card-body {
+    text-align: left;
+    width: 100%;
+    margin-top: 0; /* 🔹 remove margem extra */
+    padding-top: 0;
+  }
+
+  .contact-images {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* 🔹 deixa mais próxima do topo */
+    margin: 0; /* 🔹 remove margens extras */
+    padding: 0; /* 🔹 remove padding extra */
+  }
+
+  .contact-images img {
+    width: 60%;
+    max-width: 200px;
+    margin-top: 0; /* 🔹 cola no topo do container */
+    margin-bottom: 0; /* 🔹 cola no texto abaixo */
+    transform: translateY(-10px); /* 🔹 sobe levemente a imagem */
+  }
+}
   
