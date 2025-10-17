@@ -44,14 +44,14 @@
     flex-direction: column-reverse;
     align-items: center;
     text-align: left;
-    padding-top: 5px;   /* 🔹 reduz espaço acima */
-    padding-bottom: 5px; /* 🔹 reduz espaço abaixo */
+    padding-top: 10px; /* 🔹 mantém leve espaço superior */
+    padding-bottom: 10px;
   }
 
   .card-body {
     text-align: left;
     width: 100%;
-    margin-top: 0; /* 🔹 remove margem extra */
+    margin-top: 10px; /* 🔹 adiciona leve espaçamento entre a logo e o texto */
     padding-top: 0;
   }
 
@@ -59,17 +59,18 @@
     width: 100%;
     display: flex;
     justify-content: center;
-    align-items: flex-start; /* 🔹 deixa mais próxima do topo */
-    margin: 0; /* 🔹 remove margens extras */
-    padding: 0; /* 🔹 remove padding extra */
+    align-items: center;
+    margin-top: -10px; /* 🔹 reduz distância entre a imagem e o texto */
+    margin-bottom: 0;
   }
 
   .contact-images img {
-    width: 60%;
-    max-width: 200px;
-    margin-top: 0; /* 🔹 cola no topo do container */
-    margin-bottom: 0; /* 🔹 cola no texto abaixo */
-    transform: translateY(-10px); /* 🔹 sobe levemente a imagem */
+    width: 65%;
+    max-width: 220px;
+    height: auto;
+    margin-top: 0; /* 🔹 sem espaço acima */
+    margin-bottom: 0; /* 🔹 cola visualmente com o título */
+    transform: translateY(5px); /* 🔹 leve descida da logo pra se aproximar do texto */
   }
 }
-  
+
