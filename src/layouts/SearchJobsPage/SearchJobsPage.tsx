@@ -20,9 +20,11 @@ export const SearchJobsPage = () => {
     var indexOfFirstJob: number = indexOfLastJob - jobsPerPage;
     let lastItem = jobsPerPage * currentPage <= totalAmountOfJobs ?
         jobsPerPage * currentPage : totalAmountOfJobs;
+
+    const API_BASE_URL = process.env.REACT_APP_API_BASE_URL;
     useEffect(() => {
         const fetchJobs = async () => {
-            const baseUrl: string = "https://ciclotree.com.br/api/jobs";
+            const baseUrl: string = API_BASE_URL + "/api/jobImage/search";
             let url: string = "";
 
             if(searchUrl === "") {
@@ -39,23 +41,19 @@ export const SearchJobsPage = () => {
 
             const responseJson = await response.json();
 
-            const responseData = responseJson._embedded.jobs;
+            const responseData = responseJson.content;
 
-            setTotalAmountOfJobs(responseJson.page.totalElements);
-            setTotalPages(responseJson.page.totalPages);
+            setTotalAmountOfJobs(responseJson.totalElements);
+            setTotalPages(responseJson.totalPages);
 
-            const loadedJobs: JobModel[] = [];
-
-            for(const key in responseData){
-                loadedJobs.push({
-                    id: responseData[key].id,
-                    title: responseData[key].title,
-                    estimates: responseData[key].estimates,
-                    resume: responseData[key].resume,
-                    description: responseData[key].description,
-                    img: responseData[key].img
-                });
-            }
+            const loadedJobs: JobModel[] = responseData.map((job: any) => ({
+            id: job.id,
+            title: job.title,
+            estimates: job.estimates,
+            resume: job.resume,
+            description: job.description,
+            img: `${API_BASE_URL}${job.imageUrl}`
+        }));
 
             setJobs(loadedJobs);
             setIsLoading(false);

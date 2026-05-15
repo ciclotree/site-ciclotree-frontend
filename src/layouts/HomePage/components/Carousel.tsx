@@ -2,17 +2,19 @@ import { ReturnJob } from "./ReturnJob";
 import {useEffect, useState} from 'react';
 import JobModel from "../../../models/JobModel";
 import { SpinnerLoading } from "../../utils/SpinnerLoading";
-import './Carousel.css';
 import { Link } from "react-router-dom";
+import JobCardModel from "../../../models/JobCardModel";
 
 export const Carousel = () => {
-    const [jobs, setJobs] = useState<JobModel[]>([]);
+    const [jobs, setJobs] = useState<JobCardModel[]>([]);
     const [isLoading, setIsLoading] = useState(true);
     const [httpError, setHttpError] = useState(null);
 
+    const API_BASE_URL = process.env.REACT_APP_API_BASE_URL;
+
     useEffect(() => {
         const fetchJobs = async () => {
-            const baseUrl: string = "https://ciclotree.com.br/api/jobs";
+            const baseUrl: string = API_BASE_URL + "/api/jobImage";
             const url: string = `${baseUrl}?page=0&size=6`;
             const response = await fetch(url);
 
@@ -22,20 +24,17 @@ export const Carousel = () => {
 
             const responseJson = await response.json();
 
-            const responseData = responseJson._embedded.jobs;
+            const responseData = responseJson;
 
-            const loadedJobs: JobModel[] = [];
-
-            for(const key in responseData){
-                loadedJobs.push({
-                    id: responseData[key].id,
-                    title: responseData[key].title,
-                    estimates: responseData[key].estimates,
-                    resume: responseData[key].resume,
-                    description: responseData[key].description,
-                    img: responseData[key].img
-                });
-            }
+            const loadedJobs: JobCardModel[] = responseData.map((job: any) => {
+                return new JobCardModel(
+                job.id,
+                job.title,
+                job.estimates,
+                job.resume,
+                `${API_BASE_URL}${job.imageUrl}`
+                );
+            });
 
             setJobs(loadedJobs);
             setIsLoading(false);

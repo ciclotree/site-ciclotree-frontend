@@ -37,12 +37,14 @@ export const EstimateModal: React.FC<EstimateModalProps> = ({
   const [isLoading, setIsLoading] = useState<boolean>(!selectedService);
   const [httpError, setHttpError] = useState<string | null>(null);
 
+  const API_BASE_URL = process.env.REACT_APP_API_BASE_URL;
+  
   useEffect(() => {
     
     if (!selectedService) {
       const fetchJobs = async () => {
         try {
-          const baseUrl = "https://ciclotree.com.br/api/jobs";
+          const baseUrl = API_BASE_URL + "/api/jobs";
           const url = `${baseUrl}?page=0&size=50`;
           const response = await fetch(url);
 
