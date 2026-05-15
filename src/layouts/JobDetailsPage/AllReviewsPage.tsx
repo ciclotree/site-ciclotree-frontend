@@ -14,12 +14,11 @@ export const AllReviewsPage = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [httpError, setHttpError] = useState<string | null>(null);
 
-  // var api_base = "https://ciclotree.com.br";
-  var api_base = "http://localhost:3000";
+  const API_BASE_URL = process.env.REACT_APP_API_BASE_URL;
   useEffect(() => {
     const fetchJobTitle = async () => {
       try {
-        const response = await fetch(api_base + "/api/jobs/${jobId}");
+        const response = await fetch(API_BASE_URL + "/api/jobs/${jobId}");
         if (!response.ok) throw new Error("Erro ao buscar o título do serviço.");
         const data = await response.json();
         setJobTitle(data.title);
@@ -36,7 +35,7 @@ export const AllReviewsPage = () => {
 
   useEffect(() => {
     const fetchJobReviews = async () => {
-      const reviewUrl: string = `${api_base}/api/reviews/search/findByJobId?jobId=${jobId}`;
+      const reviewUrl: string = `${API_BASE_URL}/api/reviews/search/findByJobId?jobId=${jobId}`;
 
       try {
         const response = await fetch(reviewUrl);
