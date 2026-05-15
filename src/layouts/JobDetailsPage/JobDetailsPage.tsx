@@ -20,12 +20,12 @@ export const JobDetailsPage = () => {
 
   const jobId = window.location.pathname.split('/')[2];
 
-  // var api_base = "https://ciclotree.com.br";
-  var api_base = "http://localhost:3000";
+
+  const API_BASE_URL = process.env.REACT_APP_API_BASE_URL;
   
   const fetchJob = async () => {
     try {
-      const response = await fetch(`${api_base}/api/jobs/${jobId}`);
+      const response = await fetch(`${API_BASE_URL}/api/jobs/${jobId}`);
       if (!response.ok) throw new Error("Algo deu errado.");
       const data = await response.json();
 
@@ -35,7 +35,7 @@ export const JobDetailsPage = () => {
         estimates: data.estimates,
         resume: data.resume,
         description: data.description,
-        img: data.img
+        img: `${API_BASE_URL}/api/jobImage/${jobId}`,
       };
 
       setJob(loadedJob);
@@ -48,7 +48,7 @@ export const JobDetailsPage = () => {
 
   const fetchJobReviews = async () => {
     try {
-      const response = await fetch(`${api_base}/api/reviews/search/findByJobId?jobId=${jobId}`);
+      const response = await fetch(`${API_BASE_URL}/api/reviews/search/findByJobId?jobId=${jobId}`);
       if (!response.ok) throw new Error("Erro ao buscar avaliações.");
 
       const data = await response.json();
@@ -96,7 +96,15 @@ export const JobDetailsPage = () => {
       <div className="container d-none d-lg-block">
         <div className="row mt-5">
           <div className="col-md-3">
-            <img className="img-job" src={job?.img} width="226" height="349" alt="Serviço" />
+                      <img
+              className="img-job"
+              src={job?.img}
+              width="226"
+              height="349"
+              alt={job?.title || "Serviço"}
+              loading="eager"
+              decoding="async"
+            />
           </div>
 
           <div className="col-md-4 container custom-job-detail">
@@ -124,7 +132,15 @@ export const JobDetailsPage = () => {
       {/* Mobile */}
       <div className="container d-lg-none">
         <div className="d-flex justify-content-center align-items-center div-img-mobile">
-          <img className="img-job" src={job?.img} width="226" height="349" alt="Serviço" />
+            <img
+            className="img-job"
+            src={job?.img}
+            width="226"
+            height="349"
+            alt={job?.title || "Serviço"}
+            loading="eager"
+            decoding="async"
+            />
         </div>
 
         <div className="mt-4">

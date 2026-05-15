@@ -13,8 +13,8 @@ interface Props {
   onJobUpdated?: () => void;
   onReviewsUpdated?: () => void;
 }
-  // var api_base = "https://ciclotree.com.br";
-  var api_base = "http://localhost:3000";
+
+const API_BASE_URL = process.env.REACT_APP_API_BASE_URL;
 
 export const EstimateAndReviewBox: React.FC<Props> = ({
   job,
@@ -35,7 +35,7 @@ export const EstimateAndReviewBox: React.FC<Props> = ({
 
     try {
       
-      const response = await fetch(api_base + "/api/email/sendEstimate", {
+      const response = await fetch(API_BASE_URL + "/api/email/sendEstimate", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(payload),
@@ -62,7 +62,7 @@ export const EstimateAndReviewBox: React.FC<Props> = ({
     };
 
     try {
-      const response = await fetch(api_base + "/api/reviews", {
+      const response = await fetch(API_BASE_URL + "/api/reviews", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(payload),
