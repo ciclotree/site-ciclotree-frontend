@@ -51,7 +51,7 @@ export const EstimateModal: React.FC<EstimateModalProps> = ({
           if (!response.ok) throw new Error("Erro ao buscar serviços.");
 
           const responseJson = await response.json();
-          const responseData = responseJson._embedded.jobs;
+          const responseData = responseJson.jobs;
 
           const loadedJobs: JobModel[] = [];
 
