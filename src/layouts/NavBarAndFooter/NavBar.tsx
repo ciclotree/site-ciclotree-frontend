@@ -25,8 +25,7 @@ export const NavBar = () => {
   const handleOpenModal = () => setShowEstimateModal(true);
   const handleCloseModal = () => setShowEstimateModal(false);
   
-  // var api_base = "https://ciclotree.com.br";
-  var api_base = "http://localhost:3000";
+  const API_BASE_URL = process.env.REACT_APP_API_BASE_URL;
   
   // --- Lógica de envio do orçamento ---
   const handleEstimateSubmit = async (form: EstimateFormData): Promise<boolean> => {
@@ -36,7 +35,7 @@ export const NavBar = () => {
     };
 
     try {
-      const response = await fetch(api_base + "/api/email/sendEstimate", {
+      const response = await fetch(API_BASE_URL + "/api/email/sendEstimate", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(payload),

@@ -35,14 +35,14 @@ export const AllReviewsPage = () => {
 
   useEffect(() => {
     const fetchJobReviews = async () => {
-      const reviewUrl: string = `${API_BASE_URL}/api/reviews/search/findByJobId?jobId=${jobId}`;
+      const reviewUrl: string = `${API_BASE_URL}/api/reviews/${jobId}`;
 
       try {
         const response = await fetch(reviewUrl);
         if (!response.ok) throw new Error("Erro ao buscar avaliações.");
 
         const responseJson = await response.json();
-        const responseData = responseJson._embedded.reviews;
+        const responseData = responseJson.content ?? [];
         const loadedReviews: ReviewModel[] = [];
 
         for (const key in responseData) {

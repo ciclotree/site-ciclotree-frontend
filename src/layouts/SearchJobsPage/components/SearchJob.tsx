@@ -26,14 +26,11 @@ export const SearchJob: React.FC<{ job: JobModel }> = (props) => {
                     <div className="card-body">
                         <h4>{props.job.title}</h4>
                         <h5 className="card-title">{props.job.resume}</h5>
-                        
                         <p className="card-text">
-                            {props.job.description.length > 200 ?
-                                props.job.description.substring(0,200) + '...'        
-                            :
-                                props.job.description
+                            {(props.job.description ?? "").length > 200
+                                ? (props.job.description ?? "").substring(0, 200) + "..."
+                                : (props.job.description ?? "")
                             }
-                            
                         </p>
                     </div>
                 </div>

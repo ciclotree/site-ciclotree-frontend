@@ -41,7 +41,7 @@ export const SearchJobsPage = () => {
 
             const responseJson = await response.json();
 
-            const responseData = responseJson.content;
+            const responseData = responseJson.content ?? [];
 
             setTotalAmountOfJobs(responseJson.totalElements);
             setTotalPages(responseJson.totalPages);
@@ -80,14 +80,14 @@ export const SearchJobsPage = () => {
     }
 
     const searchHandleChange = () => {
-        if(search === "") {
-            indexOfFirstJob = 1;
+        setCurrentPage(1);
+
+        if (search.trim() === "") {
             setSearchUrl("");
-        }else {
-            indexOfFirstJob = 1;
-            setSearchUrl(`/search/findByTitleContaining?title=${search}&page=0&size=${jobsPerPage}`);
+        } else {
+            setSearchUrl(`/findByTitleContaining?title=${encodeURIComponent(search.trim())}&page=0&size=${jobsPerPage}`);
         }
-    }
+    };
     
     const paginate = (pageNumber: number) => setCurrentPage(pageNumber);
     return (
@@ -96,21 +96,29 @@ export const SearchJobsPage = () => {
                 <div>
                 <div className="row mt-5">
                     <div className="col-12 col-md-6">
-                        <div className="d-flex search-container">
-                        <input
-                            className="form-control me-4 search-input"
-                            type="search"
-                            placeholder="Procurar"
-                            aria-labelledby="Procurar"
-                            onChange={e => setSearch(e.target.value)}
-                        />
-                        <button
-                            className="btn main-color text-white btn-outline search-button"
-                            onClick={() => searchHandleChange()}
+                        <form
+                            className="d-flex search-container"
+                            onSubmit={(e) => {
+                                e.preventDefault();
+                                searchHandleChange();
+                            }}
                         >
-                            Procurar
-                        </button>
-                        </div>
+                            <input
+                                className="form-control me-4 search-input"
+                                type="search"
+                                placeholder="Procurar"
+                                aria-label="Procurar"
+                                value={search}
+                                onChange={e => setSearch(e.target.value)}
+                            />
+
+                            <button
+                                className="btn main-color text-white btn-outline search-button"
+                                type="submit"
+                            >
+                                Procurar
+                            </button>
+                        </form>
                     </div>
                     </div>
 

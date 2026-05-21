@@ -48,11 +48,11 @@ export const JobDetailsPage = () => {
 
   const fetchJobReviews = async () => {
     try {
-      const response = await fetch(`${API_BASE_URL}/api/reviews/search/findByJobId?jobId=${jobId}`);
+      const response = await fetch(`${API_BASE_URL}/api/reviews/${jobId}`);
       if (!response.ok) throw new Error("Erro ao buscar avaliações.");
 
       const data = await response.json();
-      const reviewsData = data._embedded.reviews;
+      const reviewsData = data.content ?? [];
 
       const loadedReviews: ReviewModel[] = [];
       let total = 0;

@@ -33,9 +33,8 @@ export const ReviewModal: React.FC<ReviewModalProps> = ({
     setCodeSent(false);
     setIsVerified(false);
   };
-  // var api_base = "https://ciclotree.com.br";
-  var api_base = "http://localhost:3000";  
-  
+
+  const API_BASE_URL = process.env.REACT_APP_API_BASE_URL;
   useEffect(() => {
     if (!show) {
       resetForm();
@@ -58,7 +57,7 @@ export const ReviewModal: React.FC<ReviewModalProps> = ({
     }
 
     try {
-      const response = await fetch(api_base + "/api/reviews/send-code", {
+      const response = await fetch(API_BASE_URL + "/api/reviews/send-code", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -84,7 +83,7 @@ export const ReviewModal: React.FC<ReviewModalProps> = ({
     e.preventDefault();
 
     try {
-      const response = await fetch(api_base + "/api/reviews/verify-code", {
+      const response = await fetch(API_BASE_URL + "/api/reviews/verify-code", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
