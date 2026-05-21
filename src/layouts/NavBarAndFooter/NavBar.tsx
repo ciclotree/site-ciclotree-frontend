@@ -53,7 +53,7 @@ export const NavBar = () => {
 
   return (
     <>
-      <nav className="navbar navbar-expand-lg navbar-light navbar-color py-3">
+      <nav className="navbar navbar-expand-lg navbar-light navbar-color py-3 sticky-top">
         <div className="container-fluid d-flex justify-content-between align-items-center">
           {/* --- Logo --- */}
           <span
