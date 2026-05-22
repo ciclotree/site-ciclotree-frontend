@@ -14,7 +14,7 @@ export const Carousel = () => {
 
     useEffect(() => {
         const fetchJobs = async () => {
-            const baseUrl: string = API_BASE_URL + "/api/jobImage";
+            const baseUrl: string = API_BASE_URL + "/api/jobs";
             const url: string = `${baseUrl}?page=0&size=6`;
             const response = await fetch(url);
 
@@ -24,7 +24,7 @@ export const Carousel = () => {
 
             const responseJson = await response.json();
 
-            const responseData = responseJson;
+            const responseData = responseJson.content ?? [];
 
             const loadedJobs: JobCardModel[] = responseData.map((job: any) => {
                 return new JobCardModel(

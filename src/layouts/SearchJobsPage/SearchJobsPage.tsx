@@ -24,7 +24,7 @@ export const SearchJobsPage = () => {
     const API_BASE_URL = process.env.REACT_APP_API_BASE_URL;
     useEffect(() => {
         const fetchJobs = async () => {
-            const baseUrl: string = API_BASE_URL + "/api/jobImage/search";
+            const baseUrl: string = API_BASE_URL + "/api/jobs";
             let url: string = "";
 
             if(searchUrl === "") {
@@ -85,7 +85,7 @@ export const SearchJobsPage = () => {
         if (search.trim() === "") {
             setSearchUrl("");
         } else {
-            setSearchUrl(`/findByTitleContaining?title=${encodeURIComponent(search.trim())}&page=0&size=${jobsPerPage}`);
+            setSearchUrl(`?title=${encodeURIComponent(search.trim())}&page=0&size=${jobsPerPage}`);
         }
     };
     
